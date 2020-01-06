@@ -1,0 +1,403 @@
+var content =
+{
+	tasks: [
+	{
+		// 1. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "test",
+		hu: {
+			question: "Mikor kapcsolták először<br>a villamos hálózatra a pécsi erőművet?",
+			answers: [ "<h1>1955</h1> november 1.", "<h1>1957</h1>augusztus 25.", "<h1>1959</h1>december 23." ]
+		},
+		en: {
+			question: "When was the power plant of Pécs first connected to the national grid?",
+			answers: [ "on 1st<br>November<br><h1>1955</h1>", "on 25th<br>August <br><h1>1957</h1>", "on 23rd<br>December <br><h1>1959</h1>" ]
+		},
+		rightAnswer: 3,
+		time: 15,
+		score: 6,
+		background: "./g/bg_quiz.jpg"
+	},
+	{
+		// 2. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "test",
+		hu: {
+			question: "Milyen tüzelőanyagot használt működése első 45 évében<br>a pécsi erőmű?",
+			answers: [ "szén", "földgáz", "fűtőolaj" ],
+		},
+		en: {
+			question: "What sort of fuel did the power plant of Pécs use over the first 45 years of its operation?",
+			answers: [ "coal", "natural gas", "fuel oil" ],
+		},
+		rightAnswer: 1,
+		time: 15,
+		score: 6,
+		background: "./g/bg_quiz.jpg"
+	},
+	{
+		// 3. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "test",
+		hu: {
+			question: "Mennyi biomassza kazán működik<br>a pécsi erőműben?",
+			answers: [ "1 kazán:<br>szalmával és fával fűtik", "2 kazán:<br>egy szalma- és egy fatüzelésű", "3 kazán:<br>két fa és egy szalmatüzelésű" ],
+		},
+		en: {
+			question: "How many boilers operate in the Pécs power plant?",
+			answers: [ "One:<br>it is fired by<br>straw and wood", "Two:<br>one straw- and one wood-fired", "Three:<br>two wood-fired and one straw-fired" ],
+		},
+		rightAnswer: 2,
+		time: 15,
+		score: 6,
+		background: "./g/bg_quiz.jpg"
+	},
+	{
+		// 4. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "test",
+		hu: {
+			question: "Az alábbiak közül melyik a pécsi<br>erőműben használt biomasszának<br>a legmagasabb a fűtőértéke?",
+			answers: [ "szalma", "faapríték", "napraforgóhéj" ],
+		},
+		en: {
+			question: "Which of the following fuel materials used in the power plant of Pécs has the highest caloric value?",
+			answers: [ "straw", "woodchips", "sun flower<br>husks" ],
+		},
+		rightAnswer: 1,
+		time: 15,
+		score: 6,
+		background: "./g/bg_quiz.jpg"
+		},
+		{
+			// 5. FELADAT ---------------------------------------------------------------------------------------------------
+			type: "test",
+			hu: {
+				question: "Mennyi lakást lát el zöld távhővel<br>a pécsi erőmű?",
+				answers: [ "<h3>22 000</h3>", "<h3>27 500</h3>", "<h3>31 000</h3>" ],
+			},
+			en: {
+				question: "How many flats are supplied with green district heat by Pannonpower?",
+				answers: [ "<h3>22 000</h3>", "<h3>27 500</h3>", "<h3>31 000</h3>" ],
+			},
+			rightAnswer: 3,
+			time: 15,
+			score: 6,
+			background: "./g/bg_quiz.jpg"
+		},
+		{
+		// 6. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "drag",
+		iconPosition: { x: 150, y: 0 },
+		hideReset: true,
+		snap: true,
+		hu: {
+			question: "Melyik fűtőanyagra illenek rá a következő állítások?",
+            question2: "Húzd a helyes kifejezést az üres helyre!",
+			extra1: { text: "1. Állati és növényi eredetű is lehet.", x: 527, y: 580 },
+			extra2: { text: "2. Megújuló energiaforrás.", x: 527, y: 630 },
+			extra3: { text: "3. Bárhol hozzáférhető.", x: 527, y: 680 },
+			extra4: { text: "4. A pécsi erőmű fűtőanyaga.", x: 527, y: 730 },
+			extra5: { text: "5. Minden évben újra termelhető.", x: 527, y: 780 }
+		},
+		en: {
+			question: "Which fuel is characterized by the following statements?",
+            question2: "Pull the appropriate term in the blank",
+						extra1: { text: "1. Can be of animal or plant origin.", x: 527, y: 580 },
+						extra2: { text: "2. It is a renewable energy source.", x: 527, y: 630 },
+						extra3: { text: "3. It is available anywhere.", x: 527, y: 680 },
+						extra4: { text: "4. It is the fuel used by Pécs Power Plant.", x: 527, y: 730 },
+						extra5: { text: "5. It is reproducible each year.", x: 527, y: 780 }
+		},
+		destinations:
+		[
+			{ name: "step2", x: 1026, y: 594, width: 210, height: 210 }
+		],
+		answers:
+		[
+			{ image: "./g/barchoba_label.png", rightAnswer: "step1", x: 527, y: 297, labelStyle: "label_inner_barchoba", label: { hu: "Bioetanol", en: "Bioethanol" } },
+			{ image: "./g/barchoba_label.png", rightAnswer: "step2", x: 855, y: 297, labelStyle: "label_inner_barchoba", label: { hu: "Biomassza", en: "Biomass" } },
+			{ image: "./g/barchoba_label.png", rightAnswer: "step3", x: 1183, y: 297, labelStyle: "label_inner_barchoba", label: { hu: "Földgáz", en: "Natural gas" } },
+		],
+		labelStyle: "label_inner_barchoba",
+		time: 60,
+		score: 7,
+		background: "./g/bg_barchoba.jpg"
+	},
+	{
+		// 7. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "drag",
+		snap: true,
+		iconPosition: { x: 150, y: 0 },
+		hideReset: true,
+		hu: {
+			question: "Melyik fűtőanyagra illenek rá a következő állítások?",
+            question2: "Húzd a helyes kifejezést az üres helyre!",
+			extra1: { text: "1. Magas a fűtőértéke.", x: 300, y: 550 },
+			extra2: { text: "2. A legnagyobb mennyiségben felhasznált<br>   lágyszárú biomassza tüzelőanyag a pécsi erőműben.", x: 300, y: 600 },
+			extra3: { text: "3. Bálázott formában érkezik az erőműbe.", x: 300, y: 679 },
+			extra4: { text: "4. Több módon is felhasználható, akár még építőanyagként is.", x: 300, y: 729 },
+			extra5: { text: "5. A lágyszárú tüzelőanyagokhoz tartozik.", x: 300, y: 779 }
+		},
+		en: {
+			question: "Put the stages of carbon cycle<br>into order!",
+            question2: "Pull the pictures to the correct places!",
+						extra1: { text: "1. Its calorific value is high.", x: 300, y: 550 },
+						extra2: { text: "2. It is the most used herbaceous fuel<br>   in Pécs Power Plant.", x: 300, y: 600 },
+						extra3: { text: "3. It is delivered in bales to the power plant.", x: 300, y: 679 },
+						extra4: { text: "4. It can be utilized in various ways, even as construction material.", x: 300, y: 729 },
+						extra5: { text: "5. It is a type of herbaceous fuel.", x: 300, y: 779 }
+		},
+		destinations:
+		[
+			{ name: "step3", x: 1183, y: 594, width: 210, height: 210 }
+		],
+		answers:
+		[
+			{ image: "./g/barchoba_label.png", rightAnswer: "step1", x: 527, y: 297, labelStyle: "label_inner_barchoba", label: { hu: "Faapríték", en: "Woodchips" } },
+			{ image: "./g/barchoba_label.png", rightAnswer: "step2", x: 855, y: 297, labelStyle: "label_inner_barchoba", label: { hu: "Kukorica", en: "Corn" } },
+			{ image: "./g/barchoba_label.png", rightAnswer: "step3", x: 1183, y: 297, labelStyle: "label_inner_barchoba", label: { hu: "Szalma", en: "Straw" } },
+		],
+		labelStyle: "label_inner_barchoba",
+		time: 60,
+		score: 7,
+		background: "./g/bg_barchoba_1.jpg"
+	},
+	{
+		// 8. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "drag",
+		snap: true,
+		iconPosition: { x: 300, y: 130 },
+		hideReset: true,
+		hu: {
+			question: "Húzd a helyes kifejezést az üres helyre!",
+            question2: "",
+			extra1: { text: "<h3>A pécsi erőmű 100%-ban ............................", x: 600, y: 690 },
+			extra2: { text: "<h3>energiaforrást használ a villamos", x: 600, y: 765 },
+			extra3: { text: "<h3>és hőenergia előállításához.", x: 600, y: 840 }
+		},
+		en: {
+			question: "Pull the appropriate term in the blank!",
+            question2: "",
+						extra1: { text: "<h3>The Pécs Power Plant uses 100% ............................", x: 600, y: 690 },
+						extra2: { text: "<h3>energy to produce electricity and heat.", x: 600, y: 765 }
+		},
+		destinations:
+		[
+			{ name: "step2", x: { hu: 1091, en: 1241 }, y: { hu: 518, en: 518 }, width: 336, height: 336 }
+		],
+		answers:
+		[
+			{ image: "./g/egeszitsd_ki_valasz.png", rightAnswer: "step1", x: 1227, y: 280, labelStyle: "label_inner_kiegeszites", label: { hu: "nukleáris", en: "nuclear" } },
+			{ image: "./g/egeszitsd_ki_valasz.png", rightAnswer: "step2", x: 792, y: 280, labelStyle: "label_inner_kiegeszites", label: { hu: "megújuló", en: "renewable" } },
+			{ image: "./g/egeszitsd_ki_valasz.png", rightAnswer: "step3", x: 356, y: 280, labelStyle: "label_inner_kiegeszites", label: { hu: "fosszilis", en: "fossil" } },
+		],
+		labelStyle: "label_inner_kiegeszites",
+		time: 60,
+		score: 7,
+		background: "./g/bg_egeszitsd_ki.jpg"
+	},
+	{
+		// 9. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "drag",
+		snap: true,
+		iconPosition: { x: 265, y: 130 },
+		hideReset: true,
+		hu: {
+			question: "Húzd a helyes kifejezést az üres helyre!",
+            question2: "",
+			extra1: { text: "<h3>Egy fa és egy .........................", x: 604, y: 693 },
+			extra2: { text: "<h3>tüzelésű kazán termeli az energiát.", x: 600, y: 768 }
+		},
+		en: {
+			question: "Pull the appropriate term in the blank!",
+            question2: "",
+						extra1: { text: "<h3>Energy is produced by a wood fired boiler and a", x: 604, y: 693 },
+						extra2: { text: "<h3>..................... fired boiler", x: 600, y: 788 }
+		},
+		destinations:
+		[
+			{ name: "step1", x: { hu: 840, en: 500 }, y: { hu: 530, en: 618 }, width: 336, height: 336 }
+		],
+		answers:
+		[
+			{ image: "./g/egeszitsd_ki_valasz.png", rightAnswer: "step1", x: 792, y: 280, labelStyle: "label_inner_kiegeszites", label: { hu: "szalma", en: "strow" } },
+			{ image: "./g/egeszitsd_ki_valasz.png", rightAnswer: "step2", x: 1227, y: 280, labelStyle: "label_inner_kiegeszites", label: { hu: "kukorica", en: "corn" } },
+			{ image: "./g/egeszitsd_ki_valasz.png", rightAnswer: "step3", x: 356, y: 280, labelStyle: "label_inner_kiegeszites", label: { hu: "szén", en: "coal" } },
+		],
+		labelStyle: "label_inner_kiegeszites",
+		time: 60,
+		score: 7,
+		background: "./g/bg_egeszitsd_ki.jpg"
+	},
+	{
+		// 10. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "drag",
+		snap: true,
+		iconPosition: { x: 320, y: 130 },
+		hideReset: true,
+		hu: {
+			question: "Húzd a helyes kifejezést az üres helyre!",
+            question2: "",
+			extra1: { text: "<h3>Pécs városának 31.000 lakásában", x: 600, y: 686 },
+			extra2: { text: "<h3>és 450 közintézményében ad meleget és", x: 600, y: 771 },
+			extra3: { text: "<h3>................................... a zöld energia", x: 600, y: 856 }
+		},
+		en: {
+			question: "Pull the appropriate term in the blank!",
+            question2: "",
+						extra1: { text: "<h3>The green energy provides heat and", x: 576, y: 686 },
+						extra2: { text: "<h3>................................... for 31,000 apartments", x: 576, y: 776 },
+						extra3: { text: "<h3>and 450 public institutions in Pécs.", x: 576, y: 866 }
+		},
+		destinations:
+		[
+			{ name: "step1", x: { hu: 592, en: 562 }, y: { hu: 686, en: 608 }, width: 336, height: 336 }
+		],
+		answers:
+		[
+			{ image: "./g/egeszitsd_ki_valasz.png", rightAnswer: "step1", x: 1227, y: 280, labelStyle: "label_inner_kiegeszites", label: { hu: "meleg vizet", en: "hot water" } },
+			{ image: "./g/egeszitsd_ki_valasz.png", rightAnswer: "step2", x: 792, y: 280, labelStyle: "label_inner_kiegeszites", label: { hu: "kazánt", en: "boiler" } },
+			{ image: "./g/egeszitsd_ki_valasz.png", rightAnswer: "step3", x: 356, y: 280, labelStyle: "label_inner_kiegeszites", label: { hu: "hővezetéket", en: "heating pipes" } },
+		],
+		labelStyle: "label_inner_kiegeszites",
+		time: 60,
+		score: 7,
+		background: "./g/bg_egeszitsd_ki.jpg"
+	},
+	{
+		// 11. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "drag",
+		snap: true,
+		iconPosition: { x: 300, y: 130 },
+		hideReset: true,
+		hu: {
+			question: "Húzd a helyes kifejezést az üres helyre!",
+            question2: "",
+			extra1: { text: "<h3>A tüzelőanyagok a környező .........................", x: 457, y: 686 },
+			extra2: { text: "<h3>érkeznek az erőműbe.", x: 457, y: 761 },
+		},
+		en: {
+			question: "Pull the appropriate term in the blank!",
+            question2: "",
+						extra1: { text: "<h3>Fuel is delivered to the power plant", x: 557, y: 686 },
+						extra2: { text: "<h3>from the neighbouring .........................", x: 557, y: 771 },
+		},
+		destinations:
+		[
+			{ name: "step1", x: { hu: 1005, en: 997 }, y: { hu: 518, en: 604 }, width: 336, height: 336 }
+		],
+		answers:
+		[
+			{ image: "./g/egeszitsd_ki_valasz.png", rightAnswer: "step1", x: 792, y: 280, labelStyle: "label_inner_kiegeszites", label: { hu: "megyékből", en: "counties" } },
+			{ image: "./g/egeszitsd_ki_valasz.png", rightAnswer: "step2", x: 1227, y: 280, labelStyle: "label_inner_kiegeszites", label: { hu: "városokból", en: "towns" } },
+			{ image: "./g/egeszitsd_ki_valasz.png", rightAnswer: "step3", x: 356, y: 280, labelStyle: "label_inner_kiegeszites", label: { hu: "falvakból", en: "villages" } },
+		],
+		labelStyle: "label_inner_kiegeszites",
+		time: 60,
+		score: 7,
+		background: "./g/bg_egeszitsd_ki.jpg"
+	},
+	{
+		// 12. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "drag",
+		snap: true,
+		iconPosition: { x: 150, y: 0 },
+		hu: {
+			question: "Illeszd össze az energiatermelés folyamatát!",
+						question2: "Húzd a képeket a megfelelő helyre!",
+			extra1: { text: "kazán", x: 357, y: 688 },
+			extra2: { text: "elektromos áram", x: 1464, y: 403 },
+			extra3: { text: "távfűtés", x: 1464, y: 702 }
+		},
+		en: {
+			question: "Put the pictures into the correct places to show the process of energy generation!",
+						question2: "Pull the pictures to the correct places!",
+			extra1: { text: "Boiler", x: 357, y: 688 },
+			extra2: { text: "Electricity", x: 1464, y: 403 },
+			extra3: { text: "District Heating", x: 1464, y: 702 }
+		},
+		destinations:
+		[
+			{ name: "step1", x: { hu: 525, en: 525 }, y: { hu: 482, en: 482 }, width: 177, height: 255 },
+			{ name: "step2", x: { hu: 834, en: 834 }, y: { hu: 328, en: 328 }, width: 177, height: 255 },
+			{ name: "step3", x: { hu: 1053, en: 1053 }, y: { hu: 328, en: 328 }, width: 177, height: 255 },
+			{ name: "step4", x: { hu: 1274, en: 1274 }, y: { hu: 329, en: 329 }, width: 177, height: 255 },
+			{ name: "step5", x: { hu: 834, en: 834 }, y: { hu: 629, en: 629 }, width: 177, height: 255 },
+			{ name: "step6", x: { hu: 1055, en: 1055 }, y: { hu: 629, en: 629 }, width: 177, height: 255 },
+			{ name: "step7", x: { hu: 1275, en: 1275 }, y: { hu: 629, en: 629 }, width: 177, height: 255 }
+		],
+		answers:
+		[
+			{ image: "./g/kor_elektromos fogyaszto.png", rightAnswer: "step4", x: 235, y: 850, label: { hu: "eletromos fogyasztó", en: "Electric Device" } },
+			{ image: "./g/kor_elektromoshalozat.png", rightAnswer: "step3", x: 450, y: 850, label: { hu: "eletromos hálózat", en: "Electricity" } },
+			{ image: "./g/kor_generator.png", rightAnswer: "step2", x: 650, y: 850, label: { hu: "generátor", en: "Generator" } },
+			{ image: "./g/kor_hocserelo.png", rightAnswer: "step5", x: 850, y: 850, label: { hu: "hőcserélő", en: "Heat Exchanger" } },
+			{ image: "./g/kor_tavhofelhasznalo.png", rightAnswer: "step7", x: 1050, y: 850, label: { hu: "távhő felhasználó", en: "Heating" } },
+			{ image: "./g/kor_tavhovezetek.png", rightAnswer: "step6", x: 1250, y: 850, label: { hu: "távhő vezeték", en: "Hot Water Pipe" } },
+			{ image: "./g/kor_turbina.png", rightAnswer: "step1", x: 1450, y: 850, label: { hu: "turbina", en: "Turbine" } },
+		],
+		labelStyle: "label_under",
+		time: 60,
+		score: 2,
+		background: "./g/bg_eromu_mukodese.jpg"
+		},
+		{
+		// 13. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "drag",
+		snap: true,
+		iconPosition: { x: 150, y: 0 },
+		hu: {
+			question: "Felismered a tüzelőanyagokat?",
+            question2: "Húzd a neveket a megfelelő képekre!",
+			extra1: { text: "", x: 1270, y: 300 },
+			extra2: { text: "", x: 359, y: 416 },
+			extra3: { text: "", x: 358, y: 640 },
+			extra4: { text: "", x: 358, y: 857 },
+			extra5: { text: "", x: 774, y: 416 },
+			extra6: { text: "", x: 774, y: 600 }
+		},
+		en: {
+			question: "Do you recognize the types of fuel?",
+            question2: "Pull the name to the right picture.",
+						extra1: { text: "", x: 1272, y: 302 },
+						extra2: { text: "", x: 361, y: 418 },
+						extra3: { text: "", x: 360, y: 642 },
+						extra4: { text: "", x: 360, y: 859 },
+						extra5: { text: "", x: 776, y: 418 },
+						extra6: { text: "", x: 776, y: 602 }
+		},
+		destinations:
+		[
+			{ name: "step1", x: { hu: 849, en: 849 }, y: { hu: 790, en: 790 }, width: 218, height: 218 },
+			{ name: "step2", x: { hu: 604, en: 604 }, y: { hu: 655, en: 655 }, width: 218, height: 218 },
+			{ name: "step3", x: { hu: 850, en: 850 }, y: { hu: 512, en: 512 }, width: 218, height: 218 },
+			{ name: "step4", x: { hu: 1099, en: 1099 }, y: { hu: 665, en: 665 }, width: 218, height: 218 },
+			{ name: "step5", x: { hu: 1099, en: 1099 }, y: { hu: 371, en: 371 }, width: 218, height: 218 },
+			{ name: "step6", x: { hu: 604, en: 604 }, y: { hu: 365, en: 365 }, width: 218, height: 218 },
+			{ name: "step7", x: { hu: 849, en: 849 }, y: { hu: 238, en: 238 }, width: 218, height: 218 }
+		],
+		answers:
+		[
+			{ image: "./g/parositsd.png", rightAnswer: "step1", x: 1354, y: 561, labelStyle: "label_inner_parositsd_1", label: { hu: "energia<br>nád", en: "energy<br>cane" } },
+			{ image: "./g/parositsd.png", rightAnswer: "step2", x: 1612, y: 691, labelStyle: "label_inner_parositsd", label: { hu: "faapríték", en: "woodchips" } },
+			{ image: "./g/parositsd.png", rightAnswer: "step3", x: 119, y: 671, labelStyle: "label_inner_parositsd_1", label: { hu: "kalászos<br>szalma", en: "cereal<br>straw" } },
+			{ image: "./g/parositsd.png", rightAnswer: "step4", x: 1548, y: 386, labelStyle: "label_inner_parositsd", label: { hu: "kukorica", en: "corn" } },
+			{ image: "./g/parositsd.png", rightAnswer: "step5", x: 327, y: 453, labelStyle: "label_inner_parositsd", label: { hu: "napraforgó", en: "sunflower" } },
+			{ image: "./g/parositsd.png", rightAnswer: "step6", x: 368, y: 780, labelStyle: "label_inner_parositsd_1", label: { hu: "erdei<br>apríték", en: "forest<br>woodchips" } },
+			{ image: "./g/parositsd.png", rightAnswer: "step7", x: 76, y: 383, labelStyle: "label_inner_parositsd", label: { hu: "repce", en: "rapeseed" } },
+		],
+		labelStyle: "",
+		time: 60,
+		score: 2,
+		background: "./g/bg_novenyek.jpg"
+	} ],
+
+	// ÁLTALÁNOS SZÖVEGEK -----------------------------------------------------------------------------------------------
+	texts:
+	{
+		check_btn: { hu: "helyes<br>válasz", en: "check" },
+		next_btn: { hu: "tovább", en: "next" },
+		reset_btn: { hu: "újra", en: "reset" },
+		again_btn: { hu: "újra", en: "again" },
+		eval100: { hu: "Gratulálunk!<br>Akár munkatársunk is lehetnél.", en: "Congratulations, you have reached the maximum possible score!"},
+		eval90: { hu: "Jó megfigyelő vagy,<br>de lehetne ez jobb is.", en: "Congratulations, you are a great observer!"},
+		eval60: { hu: "Máshol jártak a gondolataid.<br>Megpróbálod újra?", en: "You must have listened to something else! Do you want to try again?"}
+	}
+}

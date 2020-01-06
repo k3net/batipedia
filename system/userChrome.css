@@ -1,0 +1,7 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
+
+#fullscr-toggler { display:none!important; }
+
+/*
+global.stage.get_actions().forEach(a => global.stage.remove_action(a));
+*/

@@ -1,0 +1,187 @@
+<!doctype html>
+
+<html lang="en">
+<head>      
+  <meta charset="utf-8">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/default.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="page-wrapper" unselectable="on" onselectstart="return false;"  onmousedown="return false;">
+      <div class="select-language">
+        <div class="choose-lang">
+          <div class="lang">
+            <a class="btn-lang" data-lang="hu"><img src="img/lang-hu.png"></a>
+          </div>
+          <div class="lang">
+            <a class="btn-lang" data-lang="en"><img src="img/lang-en.png"></a>
+          </div>
+          <div class="lang">
+            <a class="btn-lang" data-lang="hr"><img src="img/lang-hr.png"></a>
+          </div>
+        </div>
+      </div>
+      <div class="select-topic hidden">
+        <div class="globe"></div>
+      </div>
+      <div class="main-content hidden">
+        <div class="main-content-tab hidden" data-content="1">
+        </div>
+        <div class="main-content-tab hidden" data-content="2">
+        </div>
+        <div class="main-content-tab hidden" data-content="3">
+        </div>        
+        <div class="home"></div>
+        <div class="arrow-container">
+          <div class="arrows-left hidden"></div>
+          <div class="arrows-right"></div>
+        </div>
+      </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+    function getUrlVars()
+    {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for(var i = 0; i < hashes.length; i++)
+        {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+    
+    
+    (function() {
+
+        const idleDurationSecs = 60;    // X number of seconds
+        //const redirectUrl = 'index.php';  // Redirect idle users to this URL
+        let idleTimeout; // variable to hold the timeout, do not modify
+
+        const resetIdleTimeout = function() {
+
+            // Clears the existing timeout
+            if(idleTimeout) clearTimeout(idleTimeout);
+
+            // Set a new idle timeout to load the redirectUrl after idleDurationSecs
+            idleTimeout = setTimeout(() => mainScreen(), idleDurationSecs * 1000);
+        };
+
+        // Init on page load
+        resetIdleTimeout();
+
+        // Reset the idle timeout on any of the events listed below
+        ['click', 'touchstart', 'mousemove'].forEach(evt => 
+            document.addEventListener(evt, resetIdleTimeout, false)
+        );
+
+    })();
+    
+    $(document)
+      .on('click', '.globe',function(){
+        mainScreen();
+      })
+      .on('click', '.home',function(){
+        $('.main-content-tab').addClass('hidden');
+        $('.main-content').addClass('hidden');
+        $('.select-topic').removeClass('hidden');
+      })
+      .on('click', '.arrows-right',function(){
+        var sliderWrapper = $('.main-content-tab:visible .slider-wrapper');
+        sliderWrapper.animate({left:'-=1920px'}, function(){
+          if(sliderWrapper.position().left / 1920 ==  (sliderWrapper.children().length-1) * -1){
+            $('.arrows-right').addClass('hidden');
+          }
+          if(sliderWrapper.position().left < 0 ){
+            $('.arrows-left').removeClass('hidden');
+          }
+        });
+      })
+      .on('click', '.arrows-left',function(){
+        var sliderWrapper = $('.main-content-tab:visible .slider-wrapper');
+        sliderWrapper.animate({left:'+=1920px'}, function(){
+          if(sliderWrapper.position().left  == 0){
+            $('.arrows-left').addClass('hidden');
+          }
+          if(sliderWrapper.position().left / 1920 >  (sliderWrapper.children().length-1) * -1){
+            $('.arrows-right').removeClass('hidden');
+          }
+        });
+      })
+      .on('click','.topic', function(){
+      
+        $('.arrows-left').addClass('hidden');
+        $('.arrows-right').removeClass('hidden');
+        $('.main-content-tab .slider-wrapper').css({left:0});
+
+        if(typeof $(this).data('url') != 'undefined'){
+          top.location.href = $(this).data('url');
+        }
+        else{
+          $('.select-topic').addClass('hidden');
+          $('.main-content').removeClass('hidden');
+          $('.main-content-tab[data-content='+$(this).data('rel')+']').removeClass('hidden');
+        }
+      });
+    
+    $('.select-language').css({'background-image':'url('+config.language_selector_background_image+')'});
+    $('.select-language a').on('click', function(){
+      generateLanguageContent($(this).data('lang'));
+    });
+    
+    var qs = getUrlVars();
+    if(typeof qs.l != 'undefined'){
+      $('.btn-lang[data-lang='+qs.l+']').click();
+    }
+    
+    function mainScreen()
+    {
+      $('.select-topic').addClass('hidden');
+
+      $('.main-content').addClass('hidden');
+      $('.main-content-tab').addClass('hidden');
+      $('.select-language').removeClass('hidden');
+    }
+    
+    function generateLanguageContent(lang)
+    {      
+      $('.select-language').addClass('hidden');
+      $('.select-topic').removeClass('hidden');
+      
+      var selectTopic = $('.select-topic');
+      selectTopic.find('.topic').remove();
+      $.each(config[lang].topics, function(i,topic){
+        console.log(topic);
+        var topicElement = '<div class="topic" style="background-image:url('+topic.img+')" data-rel="'+(i+1)+'"';
+        if(typeof topic.url != 'undefined'){
+          topicElement += ' data-url="'+topic.url+'"';
+        }
+        topicElement += '><div class="separator"></div></div>'
+        selectTopic.append(topicElement);
+      });
+      
+      for(i=1;i<=2;i++){
+        var selector = '.main-content-tab[data-content='+i+']';
+        var container = $(selector);
+        container.html('');
+        var images = config[lang]['content_'+i+'_images'];
+        
+        container.append('<div class="slider-wrapper" style="width:'+ ( images.length * 100 ) +'%"></div>');        
+        
+        var wrapper = $(selector+' .slider-wrapper');
+        
+        $.each(images,function(i,v){
+          wrapper.append('<div class="image-container" style="background-image:url('+v+')" />');
+        })
+      }
+    
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,417 @@
+var content =
+{
+	tasks: [
+	{
+		// 1. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "test",
+		hu: {
+			question: "Mikor kapcsolták először<br>a villamos hálózatra a pécsi erőművet?",
+			answers: [ "<h1>1955</h1> november 1.", "<h1>1957</h1>augusztus 25.", "<h1>1959</h1>december 23." ]
+		},
+		en: {
+			question: "When was the power plant of Pécs first connected to the national grid?",
+			answers: [ "on 1st<br>November<br><h1>1955</h1>", "on 25th<br>August <br><h1>1957</h1>", "on 23rd<br>December <br><h1>1959</h1>" ]
+		},
+		rightAnswer: 3,
+		time: 15,
+		score: 4,
+		background: "./g/bg_quiz.jpg"
+	},
+	{
+		// 2. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "test",
+		hu: {
+			question: "Milyen tüzelőanyagot használt működése első 45 évében<br>a pécsi erőmű?",
+			answers: [ "szén", "földgáz", "fűtőolaj" ],
+		},
+		en: {
+			question: "What sort of fuel did the power plant of Pécs use over the first 45 years of its operation?",
+			answers: [ "coal", "natural gas", "fuel oil" ],
+		},
+		rightAnswer: 1,
+		time: 15,
+		score: 4,
+		background: "./g/bg_quiz.jpg"
+	},
+	{
+		// 3. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "test",
+		hu: {
+			question: "Mennyi biomassza kazán működik<br>a pécsi erőműben?",
+			answers: [ "1 kazán:<br>szalmával és fával fűtik", "2 kazán:<br>egy szalma- és egy fatüzelésű", "3 kazán:<br>két fa és egy szalmatüzelésű" ],
+		},
+		en: {
+			question: "How many boilers operate in the Pécs power plant?",
+			answers: [ "One:<br>it is fired by<br>straw and wood", "Two:<br>one straw- and one wood-fired", "Three:<br>two wood-fired and one straw-fired" ],
+		},
+		rightAnswer: 2,
+		time: 15,
+		score: 4,
+		background: "./g/bg_quiz.jpg"
+	},
+	{
+		// 4. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "test",
+		hu: {
+			question: "Az alábbiak közül melyik a pécsi<br>erőműben használt biomasszának<br>a legmagasabb a fűtőértéke?",
+			answers: [ "szalma", "faapríték", "napraforgóhéj" ],
+		},
+		en: {
+			question: "Which of the following fuel materials used in the power plant of Pécs has the highest caloric value?",
+			answers: [ "straw", "woodchips", "sun flower<br>husks" ],
+		},
+		rightAnswer: 1,
+		time: 15,
+		score: 4,
+		background: "./g/bg_quiz.jpg"
+		},
+		{
+			// 5. FELADAT ---------------------------------------------------------------------------------------------------
+			type: "test",
+			hu: {
+				question: "Mennyi lakást lát el zöld távhővel<br>a Pannonpower?",
+				answers: [ "<h3>22 000</h3>", "<h3>27 500</h3>", "<h3>31 000</h3>" ],
+			},
+			en: {
+				question: "How many flats are supplied with green district heat by Pannonpower?",
+				answers: [ "<h3>22 000</h3>", "<h3>27 500</h3>", "<h3>31 000</h3>" ],
+			},
+			rightAnswer: 3,
+			time: 15,
+			score: 5,
+			background: "./g/bg_quiz.jpg"
+		},
+		{
+		// 6. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "drag",
+		snap: true,
+		hu: {
+			question: "Melyik fűtőanyagra illenek rá a következő állítások?",
+            question2: "Húzd a helyes kifejezést az üres helyre!",
+			extra1: { text: "1. Állati és növényi eredetű is lehet", x: 527, y: 580 },
+			extra2: { text: "2. Megújuló energiaforrás", x: 527, y: 630 },
+			extra3: { text: "3. Bárhol hozzáférhető", x: 527, y: 680 },
+			extra4: { text: "4. A pécsi erőmű fűtőanyaga", x: 527, y: 730 },
+			extra5: { text: "5. Minden évben újra termelhető.", x: 527, y: 780 }
+		},
+		en: {
+			question: "Put the stages of carbon cycle<br>into order!",
+            question2: "Pull the pictures to the correct places!",
+			extra1: { text: "The Carbon Cycle", x: 1380, y: 300 },
+			extra2: { text: "Baled biomass<br>fuel is delivered<br>to the power<br>plant.", x: 359, y: 405 },
+			extra3: { text: "Baled biomass<br>fuel is burnt<br>in the furnace.", x: 358, y: 629 },
+			extra4: { text: "CO2 is emitted<br>into the atmosphere.", x: 358, y: 857 },
+			extra5: { text: "After the harvest of cereals<br>the by-products are baled.", x: 774, y: 416 },
+			extra6: { text: "During their growth<br>cereals absorb CO2<br>emitted into the<br>atmosphere.", x: 774, y: 600 }
+		},
+		destinations:
+		[
+			{ name: "step1", x: 1183, y: 297, width: 210, height: 210 },
+			{ name: "step2", x: 1026, y: 594, width: 210, height: 210 },
+			{ name: "step3", x: 527, y: 297, width: 210, height: 210 }
+		],
+		answers:
+		[
+			{ image: "./g/bioetanol.png", rightAnswer: "step1", x: 527, y: 297, labelStyle: "label_right", label: { hu: "", en: "" } },
+			{ image: "./g/biomassza.png", rightAnswer: "step2", x: 855, y: 297, labelStyle: "label_right", label: { hu: "", en: "" } },
+			{ image: "./g/foldgaz.png", rightAnswer: "step3", x: 1183, y: 297, labelStyle: "label_right", label: { hu: "", en: "" } },
+		],
+		labelStyle: "label_under",
+		time: 60,
+		score: 10,
+		background: "./g/bg_barchoba.jpg"
+	},
+	{
+		// 7. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "drag",
+		snap: true,
+		hu: {
+			question: "Melyik fűtőanyagra illenek rá a következő állítások?",
+            question2: "Húzd a helyes kifejezést az üres helyre!",
+			extra1: { text: "1. Magas a fűtőértéke", x: 300, y: 550 },
+			extra2: { text: "2. A legnagyobb mennyiségben felhasznált<br>   lágyszárú biomassza tüzelőanyag a pécsi erőműben.", x: 300, y: 600 },
+			extra3: { text: "3. Bálázott formában érkezik az erőműbe", x: 300, y: 679 },
+			extra4: { text: "4. Több módon is felhasználható, akár még építőanyagként is.", x: 300, y: 729 },
+			extra5: { text: "5. A lágyszárú tüzelőanyagokhoz tartozik", x: 300, y: 779 }
+		},
+		en: {
+			question: "Put the stages of carbon cycle<br>into order!",
+            question2: "Pull the pictures to the correct places!",
+			extra1: { text: "The Carbon Cycle", x: 1380, y: 300 },
+			extra2: { text: "Baled biomass<br>fuel is delivered<br>to the power<br>plant.", x: 359, y: 405 },
+			extra3: { text: "Baled biomass<br>fuel is burnt<br>in the furnace.", x: 358, y: 629 },
+			extra4: { text: "CO2 is emitted<br>into the atmosphere.", x: 358, y: 857 },
+			extra5: { text: "After the harvest of cereals<br>the by-products are baled.", x: 774, y: 416 },
+			extra6: { text: "During their growth<br>cereals absorb CO2<br>emitted into the<br>atmosphere.", x: 774, y: 600 }
+		},
+		destinations:
+		[
+			{ name: "step1", x: 855, y: 297, width: 210, height: 210 },
+			{ name: "step2", x: 527, y: 297, width: 210, height: 210 },
+			{ name: "step3", x: 1183, y: 594, width: 210, height: 210 }
+		],
+		answers:
+		[
+			{ image: "./g/faapritek.png", rightAnswer: "step1", x: 527, y: 297, labelStyle: "label_right", label: { hu: "", en: "" } },
+			{ image: "./g/kukorica.png", rightAnswer: "step2", x: 855, y: 297, labelStyle: "label_right", label: { hu: "", en: "" } },
+			{ image: "./g/szalma.png", rightAnswer: "step3", x: 1183, y: 297, labelStyle: "label_right", label: { hu: "", en: "" } },
+		],
+		labelStyle: "label_under",
+		time: 60,
+		score: 10,
+		background: "./g/bg_barchoba_1.jpg"
+	},
+	{
+		// 8. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "drag",
+		snap: true,
+		iconPosition: { x: 300, y: 130 },
+		hu: {
+			question: "Melyik fűtőanyagra illenek rá a következő állítások?",
+            question2: "Húzd a helyes kifejezést az üres helyre!",
+			extra1: { text: "<h3>A pécsi erőmű 100%-ban", x: 600, y: 690 },
+			extra2: { text: "<h3>energiaforrást használ a villamos", x: 600, y: 765 },
+			extra3: { text: "<h3>és hőenergia előállításához.", x: 600, y: 840 }
+		},
+		en: {
+			question: "Put the stages of carbon cycle<br>into order!",
+            question2: "Pull the pictures to the correct places!",
+			extra1: { text: "The Carbon Cycle", x: 1380, y: 300 },
+			extra2: { text: "Baled biomass<br>fuel is delivered<br>to the power<br>plant.", x: 359, y: 405 },
+			extra3: { text: "Baled biomass<br>fuel is burnt<br>in the furnace.", x: 358, y: 629 },
+			extra4: { text: "CO2 is emitted<br>into the atmosphere.", x: 358, y: 857 },
+			extra5: { text: "After the harvest of cereals<br>the by-products are baled.", x: 774, y: 416 },
+			extra6: { text: "During their growth<br>cereals absorb CO2<br>emitted into the<br>atmosphere.", x: 774, y: 600 }
+		},
+		destinations:
+		[			
+			{ name: "step2", x: 1091, y: 533, width: 336, height: 336 }			
+		],
+		answers:
+		[
+			{ image: "./g/nuklearis.png", rightAnswer: "step1", x: 1227, y: 280, labelStyle: "label_right", label: { hu: "", en: "" } },
+			{ image: "./g/megujulo.png", rightAnswer: "step2", x: 792, y: 280, labelStyle: "label_right", label: { hu: "", en: "" } },
+			{ image: "./g/foszilis.png", rightAnswer: "step3", x: 356, y: 280, labelStyle: "label_right", label: { hu: "", en: "" } },
+		],
+		labelStyle: "label_under",
+		time: 60,
+		score: 10,
+		background: "./g/bg_egeszitsd_ki.jpg"
+	},
+	{
+		// 9. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "drag",
+		snap: true,
+		hu: {
+			question: "Melyik kazánra illenek rá a következő állítások?",
+            question2: "Húzd a helyes kifejezést az üres helyre!",
+			extra1: { text: "<h3>Egy fa és egy", x: 604, y: 693 },
+			extra2: { text: "<h3>tüzelésű kazán termeli az energiát.", x: 600, y: 768 },
+		},
+		en: {
+			question: "Put the stages of carbon cycle<br>into order!",
+            question2: "Pull the pictures to the correct places!",
+			extra1: { text: "The Carbon Cycle", x: 1380, y: 300 },
+			extra2: { text: "Baled biomass<br>fuel is delivered<br>to the power<br>plant.", x: 359, y: 405 },
+			extra3: { text: "Baled biomass<br>fuel is burnt<br>in the furnace.", x: 358, y: 629 },
+			extra4: { text: "CO2 is emitted<br>into the atmosphere.", x: 358, y: 857 },
+			extra5: { text: "After the harvest of cereals<br>the by-products are baled.", x: 774, y: 416 },
+			extra6: { text: "During their growth<br>cereals absorb CO2<br>emitted into the<br>atmosphere.", x: 774, y: 600 }
+		},
+		destinations:
+		[
+			{ name: "step1", x: 880, y: 540, width: 336, height: 336 },
+			{ name: "step2", x: 356, y: 280, width: 336, height: 336 },
+			{ name: "step3", x: 1227, y: 280, width: 336, height: 336 }
+		],
+		answers:
+		[
+			{ image: "./g/szalma_1.png", rightAnswer: "step1", x: 792, y: 280, labelStyle: "label_right", label: { hu: "", en: "" } },
+			{ image: "./g/kukorica_1.png", rightAnswer: "step2", x: 1227, y: 280, labelStyle: "label_right", label: { hu: "", en: "" } },
+			{ image: "./g/szen_1.png", rightAnswer: "step3", x: 356, y: 280, labelStyle: "label_right", label: { hu: "", en: "" } },
+		],
+		labelStyle: "label_under",
+		time: 60,
+		score: 10,
+		background: "./g/bg_egeszitsd_ki_1.jpg"
+	},
+	{
+		// 10. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "drag",
+		snap: true,
+		hu: {
+			question: "Melyik fűtőanyagra illenek rá a következő állítások?",
+            question2: "Húzd a helyes kifejezést az üres helyre!",
+			extra1: { text: "<h3>Pécs városának 31.000 lakásában", x: 600, y: 686 },
+			extra2: { text: "<h3>és 450 közintézményében ad meleget és", x: 600, y: 761 },
+			extra3: { text: "<h3>a zöld energia", x: 960, y: 836 }
+		},
+		en: {
+			question: "Put the stages of carbon cycle<br>into order!",
+            question2: "Pull the pictures to the correct places!",
+			extra1: { text: "The Carbon Cycle", x: 1380, y: 300 },
+			extra2: { text: "Baled biomass<br>fuel is delivered<br>to the power<br>plant.", x: 359, y: 405 },
+			extra3: { text: "Baled biomass<br>fuel is burnt<br>in the furnace.", x: 358, y: 629 },
+			extra4: { text: "CO2 is emitted<br>into the atmosphere.", x: 358, y: 857 },
+			extra5: { text: "After the harvest of cereals<br>the by-products are baled.", x: 774, y: 416 },
+			extra6: { text: "During their growth<br>cereals absorb CO2<br>emitted into the<br>atmosphere.", x: 774, y: 600 }
+		},
+		destinations:
+		[
+			{ name: "step1", x: 604, y: 686, width: 336, height: 336 },
+			{ name: "step2", x: 356, y: 280, width: 336, height: 336 },
+			{ name: "step3", x: 792, y: 280, width: 336, height: 336 }
+		],
+		answers:
+		[
+			{ image: "./g/meleg_vizet.png", rightAnswer: "step1", x: 1227, y: 280, labelStyle: "label_right", label: { hu: "", en: "" } },
+			{ image: "./g/kazant.png", rightAnswer: "step2", x: 792, y: 280, labelStyle: "label_right", label: { hu: "", en: "" } },
+			{ image: "./g/hovezeteket.png", rightAnswer: "step3", x: 356, y: 280, labelStyle: "label_right", label: { hu: "", en: "" } },
+		],
+		labelStyle: "label_under",
+		time: 60,
+		score: 10,
+		background: "./g/bg_egeszitsd_ki_2.jpg"
+	},
+	{
+		// 11. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "drag",
+		snap: true,
+		hu: {
+			question: "Melyik szóra illenek rá a következő állítások?",
+            question2: "Húzd a helyes kifejezést az üres helyre!",
+			extra1: { text: "<h3>A tüzelőanyagok a környező", x: 457, y: 686 },
+			extra2: { text: "<h3>érkeznek az erőműbe.", x: 457, y: 761 },
+		},
+		en: {
+			question: "Put the stages of carbon cycle<br>into order!",
+            question2: "Pull the pictures to the correct places!",
+			extra1: { text: "The Carbon Cycle", x: 1380, y: 300 },
+			extra2: { text: "Baled biomass<br>fuel is delivered<br>to the power<br>plant.", x: 359, y: 405 },
+			extra3: { text: "Baled biomass<br>fuel is burnt<br>in the furnace.", x: 358, y: 629 },
+			extra4: { text: "CO2 is emitted<br>into the atmosphere.", x: 358, y: 857 },
+			extra5: { text: "After the harvest of cereals<br>the by-products are baled.", x: 774, y: 416 },
+			extra6: { text: "During their growth<br>cereals absorb CO2<br>emitted into the<br>atmosphere.", x: 774, y: 600 }
+		},
+		destinations:
+		[
+			{ name: "step1", x: 1057, y: 538, width: 336, height: 336 },
+			{ name: "step2", x: 356, y: 280, width: 336, height: 336 },
+			{ name: "step3", x: 1227, y: 280, width: 336, height: 336 }
+		],
+		answers:
+		[
+			{ image: "./g/megye.png", rightAnswer: "step1", x: 792, y: 280, labelStyle: "label_right", label: { hu: "", en: "" } },
+			{ image: "./g/varos.png", rightAnswer: "step2", x: 1227, y: 280, labelStyle: "label_right", label: { hu: "", en: "" } },
+			{ image: "./g/falu.png", rightAnswer: "step3", x: 356, y: 280, labelStyle: "label_right", label: { hu: "", en: "" } },
+		],
+		labelStyle: "label_under",
+		time: 60,
+		score: 10,
+		background: "./g/bg_egeszitsd_ki_3.jpg"
+	},
+	{
+		// 12. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "drag",
+		snap: true,
+		hu: {
+			question: "Illeszd össze az energiatermelés folyamatát!",
+						question2: "Húzd a képeket a megfelelő helyre!",
+			extra1: { text: "kazán", x: 357, y: 688 },
+			extra2: { text: "elektromos áram", x: 1464, y: 403 },
+			extra3: { text: "távfűtés", x: 1464, y: 702 }
+		},
+		en: {
+			question: "Put the pictures into the correct places to show the process of energy generation!",
+						question2: "Pull the pictures to the correct places!",
+			extra1: { text: "Boiler", x: 357, y: 688 },
+			extra2: { text: "Electricity", x: 1464, y: 403 },
+			extra3: { text: "District Heating", x: 1464, y: 702 }
+		},
+		destinations:
+		[
+			{ name: "step2", x: 525, y: 482, width: 177, height: 255 },
+			{ name: "step3a", x: 834, y: 328, width: 177, height: 255 },
+			{ name: "step4a", x: 1053, y: 328, width: 177, height: 255 },
+			{ name: "step5a", x: 1274, y: 329, width: 177, height: 255 },
+			{ name: "step3b", x: 834, y: 629, width: 177, height: 255 },
+			{ name: "step4b", x: 1055, y: 629, width: 177, height: 255 },
+			{ name: "step5b", x: 1275, y: 629, width: 177, height: 255 }
+		],
+		answers:
+		[
+			{ image: "./g/kor_elektromos fogyaszto.png", rightAnswer: "step5a", x: 235, y: 850, label: { hu: "eletromos fogyasztó", en: "Electric Device" } },
+			{ image: "./g/kor_elektromoshalozat.png", rightAnswer: "step4a", x: 450, y: 850, label: { hu: "eletromos hálózat", en: "Electricity" } },
+			{ image: "./g/kor_generator.png", rightAnswer: "step3a", x: 650, y: 850, label: { hu: "generátor", en: "Generator" } },
+			{ image: "./g/kor_hocserelo.png", rightAnswer: "step3b", x: 850, y: 850, label: { hu: "hőcserélő", en: "Heat Exchanger" } },
+			{ image: "./g/kor_tavhofelhasznalo.png", rightAnswer: "step5b", x: 1050, y: 850, label: { hu: "távhő felhasználó", en: "Heating" } },
+			{ image: "./g/kor_tavhovezetek.png", rightAnswer: "step4b", x: 1250, y: 850, label: { hu: "távhő vezeték", en: "Hot Water Pipe" } },
+			{ image: "./g/kor_turbina.png", rightAnswer: "step2", x: 1450, y: 850, label: { hu: "turbina", en: "Turbine" } },
+		],
+		labelStyle: "label_under",
+		time: 60,
+		score: 14,
+		background: "./g/bg_eromu_mukodese.jpg"
+		},
+		{
+		// 13. FELADAT ---------------------------------------------------------------------------------------------------
+		type: "drag",
+		snap: true,
+		hu: {
+			question: "Fölismered a tüzelőanyagokat?",
+            question2: "Húzd a neveket a megfelelő képekre!",
+			extra1: { text: "", x: 1270, y: 300 },
+			extra2: { text: "", x: 359, y: 416 },
+			extra3: { text: "", x: 358, y: 640 },
+			extra4: { text: "", x: 358, y: 857 },
+			extra5: { text: "", x: 774, y: 416 },
+			extra6: { text: "", x: 774, y: 600 }
+		},
+		en: {
+			question: "Put the stages of carbon cycle<br>into order!",
+            question2: "Pull the pictures to the correct places!",
+			extra1: { text: "The Carbon Cycle", x: 1380, y: 300 },
+			extra2: { text: "Baled biomass<br>fuel is delivered<br>to the power<br>plant.", x: 359, y: 405 },
+			extra3: { text: "Baled biomass<br>fuel is burnt<br>in the furnace.", x: 358, y: 629 },
+			extra4: { text: "CO2 is emitted<br>into the atmosphere.", x: 358, y: 857 },
+			extra5: { text: "After the harvest of cereals<br>the by-products are baled.", x: 774, y: 416 },
+			extra6: { text: "During their growth<br>cereals absorb CO2<br>emitted into the<br>atmosphere.", x: 774, y: 600 }
+		},
+		destinations:
+		[
+			{ name: "step1", x: 850, y: 786, width: 218, height: 218 },
+			{ name: "step2", x: 604, y: 653, width: 218, height: 218 },
+			{ name: "step3", x: 850, y: 507, width: 218, height: 218 },
+			{ name: "step4", x: 1099, y: 661, width: 218, height: 218 },
+			{ name: "step5", x: 1099, y: 367, width: 218, height: 218 },
+			{ name: "step6", x: 604, y: 361, width: 218, height: 218 },
+			{ name: "step7", x: 850, y: 234, width: 218, height: 218 }
+		],
+		answers:
+		[
+			{ image: "./g/par_energianad.png", rightAnswer: "step1", x: 1351, y: 559, labelStyle: "label_right", label: { hu: "", en: "" } },
+			{ image: "./g/par_faapritek.png", rightAnswer: "step2", x: 1609, y: 688, labelStyle: "label_right", label: { hu: "", en: "" } },
+			{ image: "./g/par_kalaszos_szalma.png", rightAnswer: "step3", x: 116, y: 668, labelStyle: "label_right", label: { hu: "", en: "" } },
+			{ image: "./g/par_kukorica.png", rightAnswer: "step4", x: 1545, y: 383, labelStyle: "label_right", label: { hu: "", en: "" } },
+			{ image: "./g/par_napraforgo.png", rightAnswer: "step5", x: 324, y: 450, labelStyle: "label_right", label: { hu: "", en: "" } },
+			{ image: "./g/par_nyunya.png", rightAnswer: "step6", x: 365, y: 777, labelStyle: "label_right", label: { hu: "", en: "" } },
+			{ image: "./g/par_repce.png", rightAnswer: "step7", x: 73, y: 380, labelStyle: "label_right", label: { hu: "", en: "" } },
+		],
+		labelStyle: "label_under",
+		time: 60,
+		score: 10,
+		background: "./g/bg_novenyek.jpg"
+	} ],
+
+	// ÁLTALÁNOS SZÖVEGEK -----------------------------------------------------------------------------------------------
+	texts:
+	{
+		check_btn: { hu: "helyes<br>válasz", en: "check" },
+		next_btn: { hu: "tovább", en: "next" },
+		reset_btn: { hu: "újra", en: "reset" },
+		again_btn: { hu: "újra", en: "again" },
+		eval100: { hu: "Gratulálunk!<br>Akár munkatársunk is lehetnél.", en: "Congratulations, you have reached the maximum possible score!"},
+		eval90: { hu: "Jó megfigyelő vagy,<br>de lehetne ez jobb is.", en: "Congratulations, you are a great observer!"},
+		eval60: { hu: "Máshol jártak a gondolataid.<br>Megpróbálod újra?", en: "You must have listened to something else! Do you want to try again?"}
+	}
+}

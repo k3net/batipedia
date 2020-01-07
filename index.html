@@ -171,12 +171,13 @@
         var container = $(selector);
         container.html('');
         var images = config[lang]['content_'+i+'_images'];
-        
-        container.append('<div class="slider-wrapper" style="width:'+ ( images.length * 100 ) +'%"></div>');        
+        console.log(images.length);
+        container.append('<div class="slider-wrapper" style="width:'+ ( (images.length+1) * 100 ) +'%"></div>');        
         
         var wrapper = $(selector+' .slider-wrapper');
         
         $.each(images,function(i,v){
+console.log(v);
           wrapper.append('<div class="image-container" style="background-image:url('+v+')" />');
         })
       }

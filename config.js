@@ -21,9 +21,7 @@ var config = {
 'img/h12.jpg',
 'img/h13.jpg',
 'img/h14.jpg',
-'img/h15.jpg',
-'img/h16.jpg',
-	
+'img/h15.jpg'
    ],
    'content_2_images':[
      'img/4-ver.jpg',

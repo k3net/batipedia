@@ -128,6 +128,7 @@ input, textarea, select
 {
 	width: 100%;
 	height: 100%;
+	margin-top:300px;
 }
 #page_test .answer td
 {
@@ -165,17 +166,17 @@ input, textarea, select
 #page_test .answerpos1
 {
 	left: 127px;
-	top: 702px;
+	top: 402px;
 }
 #page_test .answerpos2
 {
 	left: 714px;
-	top: 702px;
+	top: 402px;
 }
 #page_test .answerpos3
 {
 	left: 1294px;
-	top: 702px;
+	top: 402px;
 }
 
 #page_drag

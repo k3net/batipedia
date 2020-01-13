@@ -64,12 +64,7 @@ $(document).ready( function()
 
 	$( "#common .again_btn").click( function ()
 	{
-		$( "#page_test" ).fadeOut( "slow" );
-		$( "#page_drag" ).fadeOut( "slow" );
-		$( "#common").fadeOut( "slow", function ()
-		{
-			$( "#page_start" ).fadeIn( "slow" );
-		} );
+    top.location.reload();
 	} );
 
 	$( "#page_start .hu_btn").click( function (){
@@ -253,14 +248,16 @@ function initTask( idx )
 			$( element ).mousedown( function( event )
 			{
 				mousedown( event, element );
+				event.stopPropagation();
+				event.preventDefault();
 			} );
 			$( element ).bind( "touchstart", function( event )
 			{
 				event.pageX = event.originalEvent.touches[0].pageX;
 				event.pageY = event.originalEvent.touches[0].pageY;
 				mousedown( event, element );
-				//event.stopPropagation();
-				//event.preventDefault();
+				event.stopPropagation();
+				event.preventDefault();
 			} );
 		} );
 		$( window ).unbind( "mousemove");
@@ -274,8 +271,8 @@ function initTask( idx )
 			event.pageX = event.originalEvent.touches[0].pageX;
 			event.pageY = event.originalEvent.touches[0].pageY;
 			mousemove( event );
-			//event.stopPropagation();
-			//event.preventDefault();
+			event.stopPropagation();
+			event.preventDefault();
 		} );
 		$( window ).unbind( "touchend");
 		$( window ).unbind( "mouseup");

@@ -301,7 +301,7 @@ var content =
 		},
 		destinations:
 		[
-			{ name: "step1", x: { hu: 630, en: 750, hr: 650 }, y: { hu: 520, en: 520, hr: 520 }, width: 336, height: 336 }
+			{ name: "step3", x: { hu: 630, en: 750, hr: 650 }, y: { hu: 520, en: 520, hr: 520 }, width: 336, height: 336 }
 		],
 		answers:
 		[
